@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+
+  <h1>Run Rate (Over)</h1>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Runs Scored In Over"
+      [(ngModel)]="runs">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Overs"
+      [(ngModel)]="overs">
+    </ion-input>
+  </ion-item>
+
+  <ion-button
+    expand="block"
+    (click)="calculateRunRate()">
+
+    Calculate
+
+  </ion-button>
+
+  <h2>{{ result }}</h2>
+
+</ion-content>

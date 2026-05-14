@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+
+  <h1>Bowling Economy</h1>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Runs Conceded"
+      [(ngModel)]="runs">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Overs Bowled"
+      [(ngModel)]="overs">
+    </ion-input>
+  </ion-item>
+
+  <ion-button
+    expand="block"
+    (click)="calculateEconomy()">
+
+    Calculate
+
+  </ion-button>
+
+  <h2>{{ result }}</h2>
+
+</ion-content>

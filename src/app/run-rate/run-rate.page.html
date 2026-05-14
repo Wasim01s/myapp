@@ -1,0 +1,47 @@
+<ion-content class="ion-padding">
+
+  <h1>Net Run Rate Calculator</h1>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Total Runs Scored"
+      [(ngModel)]="runsScored">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Total Overs Faced"
+      [(ngModel)]="oversFaced">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Total Runs Conceded"
+      [(ngModel)]="runsConceded">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Total Overs Bowled"
+      [(ngModel)]="oversBowled">
+    </ion-input>
+  </ion-item>
+
+  <ion-button
+    expand="block"
+    (click)="calculateNRR()">
+
+    Calculate Net Run Rate
+
+  </ion-button>
+
+  <h2>{{ result }}</h2>
+
+</ion-content>

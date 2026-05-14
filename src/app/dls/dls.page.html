@@ -1,0 +1,158 @@
+<ion-content class="ion-padding">
+
+  <h1>DLS Calculator</h1>
+
+  <h2>First Innings</h2>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Overs/Innings at Start of Match"
+      [(ngModel)]="matchOvers">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Team 1 Final Score"
+      [(ngModel)]="team1Score">
+    </ion-input>
+  </ion-item>
+
+  <h2>Innings 1 Interruptions</h2>
+
+  <div *ngFor="let row of innings1; let i = index">
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="SR. No"
+        [(ngModel)]="row.sr">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Overs Bowled"
+        [(ngModel)]="row.oversBowled">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Runs Scored"
+        [(ngModel)]="row.runsScored">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Wickets"
+        [(ngModel)]="row.wickets">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Overs Lost"
+        [(ngModel)]="row.oversLost">
+      </ion-input>
+    </ion-item>
+
+    <ion-button
+      *ngIf="innings1.length > 1"
+      expand="block"
+      color="danger"
+      (click)="removeRow1(i)">
+
+      Remove Row
+
+    </ion-button>
+
+    <br>
+
+  </div>
+
+  <ion-button expand="block" (click)="addRow1()">
+    Add Row
+  </ion-button>
+
+  <h2>Second Innings</h2>
+
+  <div *ngFor="let row of innings2; let i = index">
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="SR. No"
+        [(ngModel)]="row.sr">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Overs Bowled"
+        [(ngModel)]="row.oversBowled">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Runs Scored"
+        [(ngModel)]="row.runsScored">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Wickets"
+        [(ngModel)]="row.wickets">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        type="number"
+        placeholder="Overs Lost"
+        [(ngModel)]="row.oversLost">
+      </ion-input>
+    </ion-item>
+
+    <ion-button
+      *ngIf="innings2.length > 1"
+      expand="block"
+      color="danger"
+      (click)="removeRow2(i)">
+
+      Remove Row
+
+    </ion-button>
+
+    <br>
+
+  </div>
+
+  <ion-button expand="block" (click)="addRow2()">
+    Add Row
+  </ion-button>
+
+  <ion-button
+    expand="block"
+    color="success"
+    (click)="calculateDLS()">
+
+    Calculate DLS
+
+  </ion-button>
+
+  <h2>{{ result }}</h2>
+
+</ion-content>

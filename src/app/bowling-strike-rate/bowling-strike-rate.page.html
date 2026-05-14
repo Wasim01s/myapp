@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+
+  <h1>Bowling Strike Rate</h1>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Balls Bowled"
+      [(ngModel)]="balls">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      type="number"
+      placeholder="Wickets Taken"
+      [(ngModel)]="wickets">
+    </ion-input>
+  </ion-item>
+
+  <ion-button
+    expand="block"
+    (click)="calculateStrikeRate()">
+
+    Calculate
+
+  </ion-button>
+
+  <h2>{{ result }}</h2>
+
+</ion-content>
